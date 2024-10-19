@@ -2,11 +2,15 @@
 // キー入力
 export class Input
 {
-    constructor()
+    static keys     = {};
+    static keysDown = {};
+    static keysUp   = {};
+
+    static initialized = false;
+    static Initialize()
     {
-        this.keys     = {};
-        this.keysDown = {};
-        this.keysUp   = {};
+        if(this.initialized) { return; }
+        this.initialized = true;
 
         // キーを押したときのイベント登録
         window.addEventListener('keydown', (event) =>
@@ -29,20 +33,20 @@ export class Input
     }
 
     // 毎フレームリセット
-    Update()
+    static Update()
     {
         this.keysDown = {};
         this.keysUp   = {};
     }
 
     // キーが押され続けているか
-    GetKey(key)
+    static GetKey(key)
     {
         return !!this.keys[key];
     }
 
     // キーが押された瞬間か
-    GetKeyDown(key)
+    static GetKeyDown(key)
     {
         if(this.keysDown[key])
         {
@@ -53,7 +57,7 @@ export class Input
     }
 
     // キーが離された瞬間か
-    GetKeyUp(key)
+    static GetKeyUp(key)
     {
         if(this.keysUp[key])
         {

@@ -9,8 +9,10 @@ import { AbstractScene } from "./Scene/abstractScene.js";
 // canvas
 const canvas = document.getElementById("canvas");
 const graphics = new Graphics(canvas);
-const input = new Input();
 const sceneManager = new SceneManger(new Scene_Title());
+
+// Inputの初期化
+Input.Initialize();
 
 // 背景設定
 graphics.SetBackgroundColor("lightgray");
@@ -35,9 +37,9 @@ function GameLoop()
     const size = {w:200, h:200};
     graphics.DrawBox(pos, size, "green");
 
-    input.Update();
+    Input.Update();
 
-    //requestAnimationFrame(GameLoop);
+    requestAnimationFrame(GameLoop);
 }
 
 GameLoop();

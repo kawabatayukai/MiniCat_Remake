@@ -1,4 +1,6 @@
-import { AbstractScene } from "./abstractScene";
+import { Input } from "../Input/Input.js";
+import { AbstractScene } from "./abstractScene.js";
+import { Scene_GameMain } from "./scene_GameMain.js";
 
 // タイトル
 export class Scene_Title extends AbstractScene
@@ -10,6 +12,7 @@ export class Scene_Title extends AbstractScene
 
     Update()
     {
+        
     }
     
     Draw()
@@ -19,6 +22,11 @@ export class Scene_Title extends AbstractScene
 
     ChangeNextScene()
     {
+        if(Input.GetKeyDown('a'))
+        {
+            // ゲームメインを返す
+            return new Scene_GameMain();
+        }
         return this;
     }
 }

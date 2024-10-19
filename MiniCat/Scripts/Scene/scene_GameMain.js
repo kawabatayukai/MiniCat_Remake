@@ -1,4 +1,4 @@
-import { AbstractScene } from "./abstractScene";
+import { AbstractScene } from "./abstractScene.js";
 
 // ゲームメイン
 export class Scene_GameMain extends AbstractScene

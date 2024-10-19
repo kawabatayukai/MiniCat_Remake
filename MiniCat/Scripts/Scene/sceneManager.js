@@ -1,4 +1,4 @@
-import { AbstractScene } from "./abstractScene";
+import { AbstractScene } from "./abstractScene.js";
 
 // シーンマネージャー
 export class SceneManger extends AbstractScene

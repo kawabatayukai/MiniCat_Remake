@@ -15,7 +15,7 @@ export class AbstractScene
             // "AbstractScene を直接インスタンス化できません"
             throw new Error("Can't instantiate AbstractScene directly");
         }
-        this._status = this.Status.active;
+        //this._status = this.Status.active;
     }
 
     // シーン状況 列挙型もどき
