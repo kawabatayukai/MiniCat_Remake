@@ -11,7 +11,7 @@ const canvas = document.getElementById("canvas");
 const graphics = new Graphics(canvas);
 const sceneManager = new SceneManger(new Scene_Title());
 
-// Inputの初期化
+// Inputの初期化 :TODO 初期化処理まとめ
 Input.Initialize();
 
 // 背景設定
