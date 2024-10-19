@@ -5,20 +5,19 @@ import { Time } from "./MainLogic/time.js";
 
 // canvas
 const canvas = document.getElementById("canvas");
-
 const graphics = new Graphics(canvas);
 const input = new Input();
 
+// 背景設定
+graphics.SetBackgroundColor("lightgray");
+const pos = new Vector2(20, 20);
 function GameLoop()
 {
     Time.Update();
+    graphics.ClearDrawScreen();
 
-    // 背景
-    graphics.SetBackgroundColor("lightgray")
-    const pos = new Vector2(20, 20);
-    pos.x += + (3 *100 * Time.deltaTime);
-
-
+    
+    pos.x += + (10 * Time.deltaTime);
     const size = {w:200, h:200};
     graphics.DrawBox(pos, size, "green");
 

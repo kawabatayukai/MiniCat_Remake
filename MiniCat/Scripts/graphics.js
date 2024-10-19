@@ -12,12 +12,33 @@ export class Graphics
         {
             fillStyle:this.context.fillStyle,
         };
+        this.settings =
+        {
+            backStyle : this.initialize.fillStyle
+        };
     }
 
-    // 背景設定
+    // 画面をクリア
+    ClearDrawScreen(drawBackGround = true)
+    {
+        this.context.clearRect(0, 0, this.size.width, this.size.height);
+
+        if(drawBackGround)
+        {
+            this.DrawBackGround();
+        }
+    }
+
+    // 背景設定 設定するだけ
     SetBackgroundColor(fillStyle)
     {
-        this.context.fillStyle = fillStyle;
+        this.settings.backStyle = fillStyle;
+    }
+
+    // 背景描画
+    DrawBackGround()
+    {
+        this.context.fillStyle = this.settings.backStyle;
         this.context.fillRect(0, 0, this.size.width, this.size.height);
         this.#ResetFillStyle();
     }
