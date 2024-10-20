@@ -1,3 +1,4 @@
+import { Graphics } from "../MainLogic/graphics.js";
 import { AbstractScene } from "./abstractScene.js";
 
 // ゲームメイン
@@ -14,7 +15,7 @@ export class Scene_GameMain extends AbstractScene
     
     Draw()
     {
-        console.log("Current scene is GameMain.");
+        Graphics.DrawString({x : 0, y : 20}, "This scene is GameMain", "white");
     }
 
     ChangeNextScene()

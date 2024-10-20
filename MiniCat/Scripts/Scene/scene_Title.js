@@ -1,4 +1,5 @@
 import { Input } from "../Input/Input.js";
+import { Graphics } from "../MainLogic/graphics.js";
 import { AbstractScene } from "./abstractScene.js";
 import { Scene_GameMain } from "./scene_GameMain.js";
 
@@ -17,7 +18,7 @@ export class Scene_Title extends AbstractScene
     
     Draw()
     {
-        console.log("Current scene is Title.");
+        Graphics.DrawString({x : 0, y : 20}, "This scene is Title", "white");
     }
 
     ChangeNextScene()

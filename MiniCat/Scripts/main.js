@@ -15,8 +15,7 @@ const sceneManager = new SceneManger(new Scene_Title());
 Input.Initialize();
 
 // 背景設定
-Graphics.SetBackgroundColor("lightgray");
-const pos = new Vector2(20, 20);
+Graphics.SetBackgroundColor("black");
 
 
 function GameLoop()
@@ -32,9 +31,6 @@ function GameLoop()
         // TODO: ゲーム終了
         console.log("end");
     }
-    
-    const size = {w:200, h:200};
-    Graphics.DrawBox(pos, size, "green");
 
     Input.Update();
 
