@@ -1,4 +1,4 @@
-import { Graphics } from "./graphics.js";
+import { Graphics } from "./MainLogic/graphics.js";
 import { Vector2 } from "./Common/vector2.js";
 import { Input } from "./Input/Input.js";
 import { Time } from "./MainLogic/time.js";
@@ -8,21 +8,21 @@ import { AbstractScene } from "./Scene/abstractScene.js";
 
 // canvas
 const canvas = document.getElementById("canvas");
-const graphics = new Graphics(canvas);
+Graphics.Initialize(canvas);
 const sceneManager = new SceneManger(new Scene_Title());
 
 // Inputの初期化 :TODO 初期化処理まとめ
 Input.Initialize();
 
 // 背景設定
-graphics.SetBackgroundColor("lightgray");
+Graphics.SetBackgroundColor("lightgray");
 const pos = new Vector2(20, 20);
 
 
 function GameLoop()
 {
     Time.Update();
-    graphics.ClearDrawScreen();
+    Graphics.ClearDrawScreen();
 
     sceneManager.Update();
     sceneManager.Draw();
@@ -33,9 +33,8 @@ function GameLoop()
         console.log("end");
     }
     
-    pos.x += + (10 * Time.deltaTime);
     const size = {w:200, h:200};
-    graphics.DrawBox(pos, size, "green");
+    Graphics.DrawBox(pos, size, "green");
 
     Input.Update();
 
